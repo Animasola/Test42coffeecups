@@ -68,6 +68,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+    os.path.join(os.path.split(DEPLOY_DIR)[0], 'dev_static_files'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -114,7 +115,7 @@ TEMPLATE_DIRS = (
 )
 
 FIXTURE_DIRS = (
-    os.path.join(DEPLOY_DIR, "fixtures"),
+    os.path.join(os.path.split(DEPLOY_DIR)[0], "testapp", "templates"),
 )
 
 INSTALLED_APPS = (

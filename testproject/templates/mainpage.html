@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block head %}<title>Main page</title>{% endblock %}
+{% block body %}
+
+{% for my in my_data %}
+<div class="my-data">
+  <div class="left-side">
+    <p>Name: {{ my.name }}</p>
+	<p>Last name: {{ my.last_name }}</p>
+	<p>Date of Birth: {{ my.birth_date }}</p>
+	<p>
+	  Bio:<br>
+	  <div class="multiline">
+	    {{ my.bio }}
+	  </div>
+	</p>
+  </div>
+  <div class="right-side">
+    <p>Contacts</p>
+	<p>Email: {{ my.email }}</p>
+	<p>Jabber: {{ my.jabber }}</p>
+	<p>Skype: {{ my.skype }}</p>
+	<p>Other contacts:<br>
+	  <div class="multiline">
+	    {{ my.other_contacts }}
+	  </div>
+	</p>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}
